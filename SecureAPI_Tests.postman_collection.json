@@ -1,0 +1,206 @@
+{
+	"info": {
+		"name": "SecureAPI_Tests",
+		"_postman_id": "f6b5dc54-394d-879e-d1bc-3e6b97a56783",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"FirstName\": \"Joe\",\r\n\t\"LastName\": \"Shmoe\",\r\n\t\"Email\": \"JShmoe@AOL.com\",\r\n\t\"Username\": \"Shmoey\",\r\n\t\"Password\": \"P@ssword1\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56763/api/Users/Register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56763",
+					"path": [
+						"api",
+						"Users",
+						"Register"
+					]
+				},
+				"description": "Test User"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UsernameOrEmail\": \"Shmoey\",\n\t\"Password\": \"P@ssword1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56763/api/Users/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56763",
+					"path": [
+						"api",
+						"Users",
+						"Login"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PasswordReset",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIsIkFjY2Vzc0xldmVsIjowLCJFeHBpcmF0aW9uIjo2MzY1MDI3MDcyNDM2MzQ3Mjl9.O0gtGn5mSVfDbifAuOrLyBqBg2e9cK95koZoSDUxVX4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\": \"2\",\n\t\"OldPassword\": \"P@ssword1\",\n\t\"NewPassword\": \"P@ssword2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56763/api/Users/ResetPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56763",
+					"path": [
+						"api",
+						"Users",
+						"ResetPassword"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIsIkFjY2Vzc0xldmVsIjowLCJFeHBpcmF0aW9uIjo2MzY1MDI3MDcyNDM2MzQ3Mjl9.O0gtGn5mSVfDbifAuOrLyBqBg2e9cK95koZoSDUxVX4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\": \"3\",\n\t\"FirstName\": \"Joseph\",\n\t\"LastName\": \"Shmoe\",\n\t\"Email\": \"JShmoe@compuserve.com\",\n\t\"AccessLevel\": \"1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56763/api/Users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56763",
+					"path": [
+						"api",
+						"Users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIsIkFjY2Vzc0xldmVsIjowLCJFeHBpcmF0aW9uIjo2MzY1MDI3MDcyNDM2MzQ3Mjl9.O0gtGn5mSVfDbifAuOrLyBqBg2e9cK95koZoSDUxVX4"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:56763/api/Users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56763",
+					"path": [
+						"api",
+						"Users",
+						"2"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIsIkFjY2Vzc0xldmVsIjowLCJFeHBpcmF0aW9uIjo2MzY1MDI3MDcyNDM2MzQ3Mjl9.O0gtGn5mSVfDbifAuOrLyBqBg2e9cK95koZoSDUxVX4"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:56763/api/Users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56763",
+					"path": [
+						"api",
+						"Users",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
